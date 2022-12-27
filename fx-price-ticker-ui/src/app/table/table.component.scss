@@ -1,0 +1,78 @@
+$light-gray-1: #fafafa;
+$light-gray-2: #eee;
+
+table {
+  border-spacing: 0;
+  border: 1px solid $light-gray-1;
+  padding: 10px;
+  min-height: 150px;
+  cursor: default;
+
+  th {
+    background-color: $light-gray-1;
+    height: 50px;
+    border-top: 1px solid $light-gray-2;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid $light-gray-2;
+    border-right: 1px solid $light-gray-2;
+    text-align: center;
+  }
+
+  tr :first-child {
+    border-left: 1px solid $light-gray-2;
+  }
+
+  td {
+    height: 30px;
+  }
+
+  .row:hover {
+    box-shadow: 0 3px 15px 0 rgb(0 0 0 / 8%);
+  }
+
+  .instrument {
+    width: 100px;
+  }
+
+  .bid,
+  .ask,
+  .timestamp {
+    width: 200px;
+  }
+
+  .bid,
+  .ask {
+    &.price-up {
+      background-color: rgba(0, 128, 0, 0.05);
+      -webkit-animation-name: priceUp;
+      -webkit-animation-duration: 1s;
+    }
+
+    &.price-down {
+      background-color: rgba(255, 0, 0, 0.05);
+      -webkit-animation-name: priceDown;
+      -webkit-animation-duration: 1s;
+    }
+  }
+}
+
+@-webkit-keyframes priceUp {
+  0% {
+    background-color: rgba(0, 128, 0, 0.05);
+  }
+  100% {
+    background-color: $light-gray-1;
+  }
+}
+
+@-webkit-keyframes priceDown {
+  0% {
+    background-color: rgba(255, 0, 0, 0.05);
+  }
+  100% {
+    background-color: $light-gray-1;
+  }
+}

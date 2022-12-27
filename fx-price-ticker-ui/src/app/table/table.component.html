@@ -1,0 +1,17 @@
+<table>
+  <tr class="header">
+    <th class="instrument"></th>
+    <th class="bid">BID</th>
+    <th class="ask">ASK</th>
+  </tr>
+
+  <tr *ngFor="let price of actualPrices; trackBy: trackByFn" class="row">
+    <td class="instrument">{{ price.instrument }}</td>
+    <td class="bid" [ngClass]="price.bidDirection">
+      {{ price.bid | number : "1.4-4" }}
+    </td>
+    <td class="ask" [ngClass]="price.askDirection">
+      {{ price.ask | number : "1.4-4" }}
+    </td>
+  </tr>
+</table>
